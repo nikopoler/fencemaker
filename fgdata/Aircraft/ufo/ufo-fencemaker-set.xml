@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<PropertyList include="ufo-set.xml">
+	<sim>
+		<description>UFO with fencemaker export</description>
+		<author>ET, VaLeo</author>
+
+		<long-description>With the UFO you can place 3D objects in the FlightGear scenery, 
+			make the fences and other stuff,
+			and inspect the scenery without worrying about crashing.</long-description>
+			
+		<flight-model>ufo</flight-model>
+
+		<help>
+			<key>
+				<name>e</name>
+				<desc>export object data</desc>
+			</key>
+		</help>
+	</sim>
+
+	<input>
+		<keyboard>
+			<key n="102">
+				<name>f</name>
+				<desc>Show fence lenght dialog</desc>
+				<binding>
+					<command>nasal</command>
+					<script>ufo.fence_dialog.open()</script>
+				</binding>
+			</key>
+
+			<key n="6">
+				<name>Ctrl-F</name>
+				<desc>Export FencePlan</desc>
+				<binding>
+					<command>nasal</command>
+					<script>ufo.export_fenceplan()</script>
+				</binding>
+			</key>
+
+		</keyboard>
+	</input>
+
+	<nasal>
+		<ufo>
+			<file>Aircraft/ufo/ufo.nas</file>
+			<file>Aircraft/ufo/ufo-fencemaker.nas</file>
+		</ufo>
+	</nasal>
+</PropertyList>
